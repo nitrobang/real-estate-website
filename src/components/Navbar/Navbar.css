@@ -1,0 +1,130 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar__company-name {
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.navbar__toggle {
+  display: none;
+}
+
+a {
+  color: white;
+}
+
+
+
+.navbar__icon {
+  cursor: pointer;
+  display: none;
+}
+
+.navbar__line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+.navbar__center {
+  flex-grow: 1;
+}
+
+.navbar__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar__links li {
+  margin-right: 20px;
+}
+
+.navbar__links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar__links a:hover {
+  color: #ccc;
+}
+
+.navbar__right {
+  display: flex;
+}
+
+.navbar__right a {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.navbar__right a:hover {
+  color: #ccc;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__center {
+    display: none;
+  }
+
+  .navbar__right {
+    display: none;
+  }
+
+  .navbar__icon {
+    display: block;
+  }
+
+  .navbar__checkbox:checked ~ .navbar__center {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar__checkbox:checked ~ .navbar__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .navbar__checkbox:checked + .navbar__icon .navbar__line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .navbar__checkbox:checked + .navbar__icon .navbar__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__checkbox:checked + .navbar__icon .navbar__line:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
+}
